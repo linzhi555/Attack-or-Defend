@@ -1,6 +1,7 @@
 #include "Console.h"
 
 #include "WindowsConsole.h"
+#include "UnixConsole.h"
 
 namespace aod {
 
@@ -10,6 +11,9 @@ namespace aod {
         static WindowsConsole sConsoleInstance;
 #endif
 
+#ifdef __unix__
+        static UnixConsole sConsoleInstance;
+#endif
         return sConsoleInstance;
     }
 
